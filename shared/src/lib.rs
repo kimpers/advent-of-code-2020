@@ -13,3 +13,12 @@ pub fn read_file(filename: &str) -> Vec<String> {
 
     lines
 }
+
+pub fn parse_input_to_character_matrix(input: &str) -> Vec<Vec<String>> {
+    input
+        .split("\n")
+        .map(|row| row.trim())
+        .filter(|row| row.len() > 0)
+        .map(|line| line.chars().map(|c| c.to_string()).collect())
+        .collect::<Vec<Vec<String>>>()
+}
