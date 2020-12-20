@@ -22,3 +22,12 @@ pub fn parse_input_to_character_matrix(input: &str) -> Vec<Vec<String>> {
         .map(|line| line.chars().map(|c| c.to_string()).collect())
         .collect::<Vec<Vec<String>>>()
 }
+
+pub fn parse_input_to_string_vec(input: &str) -> Vec<String> {
+    input
+        .split("\n")
+        .map(|row| row.trim())
+        .filter(|row| row.len() > 0)
+        .map(|r| r.to_string())
+        .collect::<Vec<String>>()
+}
